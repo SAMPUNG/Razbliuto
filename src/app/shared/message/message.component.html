@@ -1,0 +1,24 @@
+<mat-toolbar
+  role="popup">
+
+  <span
+    class="popup-message"
+    [ngStyle]="{ 'color': messageColor() }">
+
+    {{ data.message }}
+  </span>
+
+  <span
+    class="toolbar-spacer">
+  </span>
+
+  <span
+    matRipple
+    class="popup-action"
+    (click)="onAction()"
+    [ngStyle]="{ 'color': actionColor() }">
+
+    {{ data.action }}
+  </span>
+
+</mat-toolbar>
