@@ -98,6 +98,19 @@ const EXAMPLE_DATA: Array<DatagridItem> = [
   {id: 20, name: 'Calcium'},
 ]
 
+export interface Response<T> {
+  data: Array<T>
+  message: string
+  success: boolean
+}
+
+export interface Progress {
+  color: string
+  mode: string
+  value: number
+  buffer: number
+}
+
 export {
   COLOR_NAME,
   COLOR_HEX,

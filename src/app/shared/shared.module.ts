@@ -10,35 +10,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Portal
 import { PortalModule } from '@angular/cdk/portal';
 
-// Material Design: Layout
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatListModule } from '@angular/material/list';
-import { MatStepperModule } from '@angular/material/stepper';
-import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-//                : Navigation
-import { MatMenuModule } from '@angular/material/menu';
-import { MatSidenavModule } from '@angular/material/sidenav';
+// Material Design: Navigation
 import { MatToolbarModule } from '@angular/material/toolbar';
 //                : Buttons & Indicators
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material';
 import { MatIconModule } from '@angular/material';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRippleModule } from '@angular/material';
 //                : Popups & Modals
-import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 //                : Form Controls
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
-import { MatNativeDateModule } from '@angular/material';
 //                : Data Table
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -61,7 +45,7 @@ import { MessageComponent } from './message/message.component';
 export { MessageService } from './message/message.service';
 
 // Routing
-import { SharedRoutingModule } from './shared-routing.module';
+export { SharedRoutingModule } from './shared-routing.module';
 
 @NgModule({
   declarations: [
@@ -74,35 +58,19 @@ import { SharedRoutingModule } from './shared-routing.module';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,          // HTTP
     FormsModule,               // Angular Form
     ReactiveFormsModule,
     PortalModule,              // Portal
-    LayoutModule,              // Material Design: Layout
-    MatListModule,
-    MatGridListModule,
-    MatStepperModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatToolbarModule,          //                : Navigation
-    MatMenuModule,
-    MatSidenavModule,
+    MatToolbarModule,          // Material Design: Navigation
     MatButtonModule,           //                : Buttons & Indicators
     MatIconModule,
     MatRippleModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
     MatChipsModule,
     MatBadgeModule,
-    MatBottomSheetModule,      //                : Popups & Modals
-    MatSnackBarModule,
+    MatSnackBarModule,         //                : Popups & Modals
     MatFormFieldModule,        //                : Form Controls
     MatInputModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     MatTableModule,            //                : Data Table
     MatPaginatorModule,
     MatSortModule,
@@ -112,33 +80,17 @@ import { SharedRoutingModule } from './shared-routing.module';
     }),
     PdfViewerModule,           // Pdf
     CKEditorModule,            // CKEditor
-
-    SharedRoutingModule        // Routing
   ],
   providers: [
-    LayoutModule,              // Material Design: Layout
-    MatListModule,
-    MatGridListModule,
-    MatStepperModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatToolbarModule,          //                : Navigation
-    MatMenuModule,
-    MatSidenavModule,
+    MatToolbarModule,          // Material Design: Navigation
     MatButtonModule,           //                : Buttons & Indicators
     MatIconModule,
     MatRippleModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
     MatChipsModule,
     MatBadgeModule,
-    MatBottomSheetModule,      //                : Popups & Modals
-    MatSnackBarModule,
+    MatSnackBarModule,         //                : Popups & Modals
     MatFormFieldModule,        //                : Form Controls
     MatInputModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     MatTableModule,            //                : Data Table
     MatPaginatorModule,
     MatSortModule,
@@ -149,13 +101,6 @@ import { SharedRoutingModule } from './shared-routing.module';
         duration: 3000,
         horizontalPosition: 'center',
         verticalPosition: 'top'
-      }
-    },
-    {                          // Stepper Configure
-      provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: {
-        displayDefaultIndicatorType: false,
-        showError: true
       }
     }
   ],

@@ -10,7 +10,7 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'mystic',
+    redirectTo: 'homepage/mystic',
     pathMatch: 'full',
     data: { title: '404' }
   }
