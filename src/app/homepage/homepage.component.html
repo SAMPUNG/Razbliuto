@@ -1,0 +1,32 @@
+<app-nav
+  [mobile]="mobile"
+  [notice]="notice.length"
+  [opened]="opened"
+  (drawing)="drawing($event)">
+</app-nav>
+
+<mat-drawer-container
+  class="sider-container">
+
+  <mat-drawer
+    mode="over"
+    [(opened)]="opened">
+
+    <app-sider
+      [mobile]="mobile"
+      [notice]="notice"
+      (drawing)="drawing($event)"
+      (clearNotice)="clearNotice()">
+    </app-sider>
+
+  </mat-drawer>
+
+  <mat-drawer-content
+    role="main">
+
+    <router-outlet>
+    </router-outlet>
+
+  </mat-drawer-content>
+
+</mat-drawer-container>

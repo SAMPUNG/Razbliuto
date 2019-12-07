@@ -1,0 +1,170 @@
+<!-- Menu -->
+<mat-accordion
+  class="sider-container">
+
+  <mat-expansion-panel
+    *ngFor="let section of menu; index as index; last as last; first as first"
+    [expanded]="section.opened"
+    (opened)="openStep(index)"
+    hideToggle>
+
+    <mat-expansion-panel-header>
+
+      <mat-panel-title>{{ section.label }}
+      </mat-panel-title>
+
+      <mat-panel-description>{{ section.name }}
+
+      </mat-panel-description>
+
+    </mat-expansion-panel-header>
+
+    <mat-list>
+
+      <div class="section-cotainer">
+
+        <h3
+          mat-subheader>{{ section.description }}
+        </h3>
+
+          <mat-list-item
+            *ngFor="let node of section.items"
+            (click)="onNode(node.name)">
+
+            <mat-icon
+              mat-list-icon
+              [color]="node.color">{{ node.icon }}
+            </mat-icon>
+
+            <h4
+              mat-line>{{ node.label }}
+            </h4>
+
+            <p
+              mat-line>{{ node.description }}
+            </p>
+          </mat-list-item>
+
+      </div>
+
+    </mat-list>
+
+    <mat-action-row>
+
+      <button
+        mat-button
+        *ngIf="!first"
+        color="primary"
+        (click)="prevStep(index)">Previous
+      </button>
+
+      <button
+        mat-button
+        *ngIf="!last"
+        color="primary"
+        (click)="nextStep(index)">Next
+      </button>
+
+    </mat-action-row>
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<!-- Tool -->
+<mat-toolbar
+  class="sider-tool-bar"
+  role="sider"
+  [ngClass]="{ 'mobile': mobile }">
+
+  <button
+    mat-icon-button
+    routerLink="/"
+    routerLinkActive="active">
+
+    <mat-icon>home
+    </mat-icon>
+
+  </button>
+
+  <span
+    class="toolbar-spacer">
+  </span>
+
+  <button
+    mat-icon-button
+    [disabled]="!notice.length"
+    (click)="clearNoticeAll()">
+
+    <mat-icon>clear_all
+    </mat-icon>
+
+  </button>
+
+  <span
+    class="toolbar-spacer">
+  </span>
+
+  <button
+    mat-icon-button
+    disabled>
+
+    <mat-icon>notifications_off
+    </mat-icon>
+
+  </button>
+
+  <span
+    class="toolbar-spacer">
+  </span>
+
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="quitMenu">
+
+    <mat-icon>eject
+    </mat-icon>
+
+  </button>
+
+  <!-- Quit Menu -->
+  <mat-menu
+    #quitMenu="matMenu">
+
+    <button
+      mat-menu-item
+      disabled>
+
+      <mat-icon>exit_to_app
+      </mat-icon>
+
+      Log Out
+    </button>
+
+    <button
+      mat-menu-item
+      disabled
+      (click)="closeWin()">
+
+      <mat-icon>close
+      </mat-icon>
+
+      Close Page
+    </button>
+
+  </mat-menu>
+
+</mat-toolbar>
+
+<!-- Notice List -->
+<mat-list
+  class="sider-notice-list">
+
+  <mat-list-item routerLink="/article/website" routerLinkActive="active">Express Web on Ubuntu
+  </mat-list-item>
+
+  <mat-list-item
+    *ngFor="let item of notice">{{ item.message }}
+  </mat-list-item>
+
+</mat-list>
