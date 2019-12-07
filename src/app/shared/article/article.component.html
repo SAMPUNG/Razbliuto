@@ -1,5 +1,5 @@
 <div
-  class="markdown-header">
+  class="article-header">
 
   <ng-template
     [cdkPortalOutlet]="article">
@@ -8,11 +8,25 @@
 </div>
 
 <div
-  class="markdown-body">
+  [ngSwitch]="sourceType"
+  class="article-body">
 
   <markdown
+    *ngSwitchCase="'md'"
     lineNumber
     [src]="path">
   </markdown>
+
+  <pdf-viewer
+    *ngSwitchCase="'pdf'"
+    [src]="path">
+  </pdf-viewer>
+
+  <ckeditor
+    *ngSwitchDefault
+    [editor]="Editor"
+    [data]="data"
+    disabled>
+  </ckeditor>
 
 </div>

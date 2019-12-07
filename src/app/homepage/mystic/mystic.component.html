@@ -1,0 +1,21 @@
+<app-article
+  [url]="url"
+  type="md"
+  [articleProtal]="articleProtal">
+</app-article>
+
+<ng-template
+  cdkPortal
+  #articleProtal="cdkPortal">
+
+  <mat-chip-list>
+
+    <mat-chip>404
+    </mat-chip>
+
+    <mat-chip>It's Awkward！
+    </mat-chip>
+
+  </mat-chip-list>
+
+</ng-template>
