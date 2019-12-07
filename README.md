@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Demo
 
-This project has a demo on [https://SAMPUNG.github.io/](https://SAMPUNG.github.io/)
+This project has a demo on [https://SAMPUNG.github.io/Razbliuto](https://SAMPUNG.github.io/Razbliuto)
 
 ## Development server
 

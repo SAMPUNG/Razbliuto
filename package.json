@@ -6,7 +6,7 @@
     "start": "ng serve",
     "open": "ng serve --open",
     "build": "ng build",
-    "pages": "ng build --prod --base-href \"https://SAMPUNG.github.io/\"",
+    "pages": "ng build --prod --base-href \"https://SAMPUNG.github.io/Razbliuto\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
