@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { MessageService } from '../../shared/message/message.service';
-import { Progress } from '../../shared/shared.interface';
 
 @Component({
   selector: 'app-nav',
@@ -14,21 +13,12 @@ export class NavComponent implements OnInit {
   @Input('opened') drawer: boolean
   @Output() drawing = new EventEmitter<boolean>()
 
-  progress: Progress
-
   searching: boolean
   keyword: string
 
   constructor(private message: MessageService) { }
 
   ngOnInit() {
-    this.progress = {
-      color: 'warn',
-      mode: 'indeterminate',
-      value: 0,
-      buffer: 100
-    }
-
     this.searching = false
   }
 
@@ -46,9 +36,5 @@ export class NavComponent implements OnInit {
 
   onDraw(opened: boolean) {
     this.drawing.emit(opened)
-  }
-
-  updateProgress(progress: Progress): void {
-    this.progress = Object.assign({}, progress)
   }
 }

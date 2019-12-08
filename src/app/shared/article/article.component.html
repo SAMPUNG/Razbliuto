@@ -14,19 +14,24 @@
   <markdown
     *ngSwitchCase="'md'"
     lineNumber
-    [src]="path">
+    [src]="path"
+    (error)="error()"
+    (load)="loaded()">
   </markdown>
 
   <pdf-viewer
     *ngSwitchCase="'pdf'"
-    [src]="path">
+    [src]="path"
+    (after-load-complete)="loaded()"
+    (error)="error()">
   </pdf-viewer>
 
   <ckeditor
     *ngSwitchDefault
+    disabled
     [editor]="Editor"
     [data]="data"
-    disabled>
+    (ready)="loaded()">
   </ckeditor>
 
 </div>

@@ -4,6 +4,7 @@ import { TemplatePortal } from '@angular/cdk/portal';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import { MARKDOWN_PATH, PDF_PATH } from '../shared.interface';
+import { ProgressService } from '../shared.module';
 
 @Component({
   selector: 'app-article',
@@ -19,7 +20,10 @@ export class ArticleComponent implements OnInit {
   path: string;
   sourceType: string;
 
-  constructor(private router: ActivatedRoute) {
+  constructor(
+    private progress: ProgressService,
+    private router: ActivatedRoute
+  ) {
     this.Editor = ClassicEditor
   }
 
@@ -52,7 +56,18 @@ export class ArticleComponent implements OnInit {
       }
 
       this.sourceType = type;
+      this.ready();
     }
+  }
+
+  error(): void {
+    this.progress.error()
+  }
+  loaded(): void {
+    this.progress.loaded()
+  }
+  ready(): void {
+    this.progress.loading()
   }
 
 }

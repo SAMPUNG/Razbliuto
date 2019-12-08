@@ -1,7 +1,7 @@
 /**
- * @enum COLOR_NAME
- * @description Select color by name
  * @alias Shared Module
+ * @description Select color by name
+ * @enum COLOR_NAME
  */
 enum COLOR_NAME {
   accent,
@@ -14,9 +14,9 @@ enum COLOR_NAME {
   warning
 }
 /**
- * @constant COLOR_HEX The hexadecimal value of color
- * @description Select color by name
  * @alias Shared Module
+ * @description Select color by name
+ * @constant COLOR_HEX The hexadecimal value of color
  */
 const COLOR_HEX: Array<string> = [
   '#b0bec5', // accent
@@ -31,20 +31,20 @@ const COLOR_HEX: Array<string> = [
 
 
 /**
- * @constant MARKDOWN_PATH markdown files' base path
  * @alias Article Component
+ * @constant MARKDOWN_PATH markdown files' base path
  */
 const MARKDOWN_PATH: string = '/assets/markdown/'
 /**
- * @constant PDF_PATH pdf files' base path
  * @alias Article Component
+ * @constant PDF_PATH pdf files' base path
  */
 const PDF_PATH: string = '/assets/pdf/'
 
 
 /**
- * @class Popup
  * @alias Message Component & Service
+ * @class Popup
  */
 class Popup {
   action?: string
@@ -54,8 +54,8 @@ class Popup {
   method?: string
 }
 /**
- * @instance Alert
  * @alias Message Component & Service
+ * @instance Alert
  */
 interface Alert {
   message: string
@@ -64,16 +64,16 @@ interface Alert {
 
 
 /**
- * @interface DatagridItem
  * @alias Grid Component & Service
+ * @interface DatagridItem
  */
 interface DatagridItem {
   id: number
   name: string
 }
 /**
- * @constant EXAMPLE_DATA Example data
  * @alias Grid Component & Service
+ * @constant EXAMPLE_DATA Example data
  */
 const EXAMPLE_DATA: Array<DatagridItem> = [
   {id: 1, name: 'Hydrogen'},
@@ -98,26 +98,88 @@ const EXAMPLE_DATA: Array<DatagridItem> = [
   {id: 20, name: 'Calcium'},
 ]
 
-export interface Response<T> {
+/**
+ * @alias App Module
+ * @interface Response Response of HTTP Request
+ */
+interface Response<T> {
   data: Array<T>
   message: string
   success: boolean
 }
 
-export interface Progress {
+/**
+ * @alias MatProgressBar Module
+ * @alias MatProgressSpinner Module
+ * @interface Progress Progress Configure
+ */
+interface Progress {
   color: string
   mode: string
-  value: number
-  buffer: number
+  value?: number
+  bufferValue?: number
+}
+/**
+ * @alias MatProgressBar Module
+ * @alias MatProgressSpinner Module
+ * @constant PROGRESS_BUFFER Progress Configure if Buffer
+ */
+const PROGRESS_BUFFER: Progress = {
+  color: 'primary',
+  mode: 'buffer',
+  value: 30,
+  bufferValue: 70
+}
+/**
+ * @alias MatProgressBar Module
+ * @alias MatProgressSpinner Module
+ * @constant PROGRESS_DONE Progress Configure if Done
+ */
+const PROGRESS_DONE: Progress = {
+  color: 'primary',
+  mode: 'determinate',
+  value: 100,
+  bufferValue: 100
+}
+/**
+ * @alias MatProgressBar Module
+ * @alias MatProgressSpinner Module
+ * @constant PROGRESS_QUERY Progress Configure if Query
+ */
+const PROGRESS_QUERY: Progress = {
+  color: 'primary',
+  mode: 'query'
+}
+/**
+ * @alias MatProgressBar Module
+ * @alias MatProgressSpinner Module
+ * @constant PROGRESS_WHEN Progress Configure if When
+ */
+const PROGRESS_WHEN: Progress = {
+  color: 'primary',
+  mode: 'indeterminate'
 }
 
 export {
   COLOR_NAME,
   COLOR_HEX,
+
+  EXAMPLE_DATA,
+
   MARKDOWN_PATH,
   PDF_PATH,
-  Popup,
+
+  PROGRESS_BUFFER,
+  PROGRESS_DONE,
+  PROGRESS_QUERY,
+  PROGRESS_WHEN,
+
   Alert,
+  Popup,
+
   DatagridItem,
-  EXAMPLE_DATA
+
+  Progress,
+
+  Response
 }
