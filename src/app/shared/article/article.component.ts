@@ -4,7 +4,7 @@ import { TemplatePortal } from '@angular/cdk/portal';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import { MARKDOWN_PATH, PDF_PATH } from '../shared.interface';
-import { ProgressService } from '../shared.module';
+import { ProgressService } from '../progress/progress.service';
 
 @Component({
   selector: 'app-article',
