@@ -1,0 +1,34 @@
+
+
+<div
+  class="main-board">
+
+  <div
+    class="number-card-board">
+
+    <ngx-charts-number-card
+      [results]="numberCards"
+      [scheme]="scheme"
+      [bandColor]="taste"
+      animations>
+    </ngx-charts-number-card>
+
+  </div>
+
+  <div
+    class="graph-board">
+
+    <ngx-graph
+      layout="dagreCluster"
+      [draggingEnabled]="true"
+      [panningEnabled]="true"
+      [enableZoom]="true"
+      [links]="graphLinks"
+      [nodes]="graphNodes"
+      [clusters]="graphClusters"
+      [zoomToFit$]="zoomToFit$">
+    </ngx-graph>
+
+  </div>
+
+</div>

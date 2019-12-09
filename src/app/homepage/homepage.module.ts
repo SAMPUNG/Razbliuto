@@ -6,20 +6,20 @@ import { SharedModule } from '../shared/shared.module';
 // Components
 import { HomepageComponent } from './homepage.component';
 import { MysticComponent } from './mystic/mystic.component';
+import { NavComponent } from './nav/nav.component';
+import { SiderComponent } from './sider/sider.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 // Routing
 import { HomepageRoutingModule } from './homepage-routing.module';
-import { NavComponent } from './nav/nav.component';
-import { SiderComponent } from './sider/sider.component';
 
 @NgModule({
   declarations: [
     HomepageComponent,
     MysticComponent,
-    WelcomeComponent,
     NavComponent,
     SiderComponent,
+    WelcomeComponent,
   ],
   imports: [
     SharedModule,
