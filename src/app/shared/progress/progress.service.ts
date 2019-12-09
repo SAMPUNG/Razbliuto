@@ -39,9 +39,9 @@ export class ProgressService {
   }
   loaded(): void {
     this.done(100);
-    setTimeout(() => {
-      this.clear();
-    }, 1000 * 3);
+    // setTimeout(() => {
+    //   this.clear();
+    // }, 1000 * 3);
   }
   loading(): void {
     this.query();
