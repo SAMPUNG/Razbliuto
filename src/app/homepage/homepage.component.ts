@@ -20,6 +20,7 @@ export class HomepageComponent implements OnInit {
     // current platform: ANDROID || IOS
     // current rendering engine: BLINK || TRIDENT || WEBKIT
     this.mobile = this.platform.ANDROID || this.platform.IOS
+    this.mobile = true
 
     this.notice = [
       {

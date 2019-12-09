@@ -20,6 +20,7 @@ export class SiderComponent implements OnInit {
   @Output() clearNotice = new EventEmitter<void>()
 
   menu = MENU
+  noticeOpened: boolean = true
   reuteMap: Map<string, string> = new Map()
   eventMap: Map<string, string> = new Map()
 
@@ -67,17 +68,15 @@ export class SiderComponent implements OnInit {
 
   openStep(index: number): void {
     this.menu[index].opened = true
+    this.toggleNotice(false)
   }
-
   closeStep(index: number): void {
     this.menu[index].opened = false
   }
-
   prevStep(index: number): void {
     this.closeStep(index)
     this.openStep(index - 1)
   }
-
   nextStep(index: number): void {
     this.closeStep(index)
     this.openStep(index + 1)
@@ -99,5 +98,8 @@ export class SiderComponent implements OnInit {
 
   clearNoticeAll(): void {
     this.clearNotice.emit()
+  }
+  toggleNotice(opened?: boolean): void {
+    this.noticeOpened = opened !== undefined ? opened : !this.noticeOpened
   }
 }

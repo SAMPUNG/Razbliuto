@@ -1,75 +1,101 @@
 <!-- Menu -->
-<mat-accordion
+<div
   class="sider-container">
 
-  <mat-expansion-panel
-    *ngFor="let section of menu; index as index; last as last; first as first"
-    [expanded]="section.opened"
-    (opened)="openStep(index)"
-    hideToggle>
+  <mat-accordion>
 
-    <mat-expansion-panel-header>
+    <mat-expansion-panel
+      [expanded]="noticeOpened"
+      (opened)="toggleNotice(true)"
+      hideToggle>
 
-      <mat-panel-title>{{ section.label }}
-      </mat-panel-title>
+      <!-- Notice List -->
+      <mat-list
+        class="sider-notice-list">
 
-      <mat-panel-description>{{ section.name }}
+        <mat-list-item
+          routerLink="/article/website"
+          routerLinkActive="active">Express Web on Ubuntu
+        </mat-list-item>
 
-      </mat-panel-description>
+        <mat-list-item
+          *ngFor="let item of notice">{{ item.message }}
+        </mat-list-item>
 
-    </mat-expansion-panel-header>
+      </mat-list>
 
-    <mat-list>
+    </mat-expansion-panel>
 
-      <div class="section-cotainer">
+    <mat-expansion-panel
+      *ngFor="let section of menu; index as index; last as last; first as first"
+      [expanded]="section.opened"
+      (opened)="openStep(index)"
+      hideToggle>
 
-        <h3
-          mat-subheader>{{ section.description }}
-        </h3>
+      <mat-expansion-panel-header>
 
-          <mat-list-item
-            *ngFor="let node of section.items"
-            (click)="onNode(node.name)">
+        <mat-panel-title>{{ section.label }}
+        </mat-panel-title>
 
-            <mat-icon
-              mat-list-icon
-              [color]="node.color">{{ node.icon }}
-            </mat-icon>
+        <mat-panel-description>{{ section.name }}
 
-            <h4
-              mat-line>{{ node.label }}
-            </h4>
+        </mat-panel-description>
 
-            <p
-              mat-line>{{ node.description }}
-            </p>
-          </mat-list-item>
+      </mat-expansion-panel-header>
 
-      </div>
+      <mat-list>
 
-    </mat-list>
+        <div class="section-cotainer">
 
-    <mat-action-row>
+          <h3
+            mat-subheader>{{ section.description }}
+          </h3>
 
-      <button
-        mat-button
-        *ngIf="!first"
-        color="primary"
-        (click)="prevStep(index)">Previous
-      </button>
+            <mat-list-item
+              *ngFor="let node of section.items"
+              (click)="onNode(node.name)">
 
-      <button
-        mat-button
-        *ngIf="!last"
-        color="primary"
-        (click)="nextStep(index)">Next
-      </button>
+              <mat-icon
+                mat-list-icon
+                [color]="node.color">{{ node.icon }}
+              </mat-icon>
 
-    </mat-action-row>
+              <h4
+                mat-line>{{ node.label }}
+              </h4>
 
-  </mat-expansion-panel>
+              <p
+                mat-line>{{ node.description }}
+              </p>
+            </mat-list-item>
 
-</mat-accordion>
+        </div>
+
+      </mat-list>
+
+      <mat-action-row>
+
+        <button
+          mat-button
+          *ngIf="!first"
+          color="primary"
+          (click)="prevStep(index)">Previous
+        </button>
+
+        <button
+          mat-button
+          *ngIf="!last"
+          color="primary"
+          (click)="nextStep(index)">Next
+        </button>
+
+      </mat-action-row>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+</div>
 
 <!-- Tool -->
 <mat-toolbar
@@ -107,10 +133,20 @@
 
   <button
     mat-icon-button
-    disabled>
+    [disabled]="!notice.length"
+    (click)="toggleNotice()">
 
-    <mat-icon>notifications_off
+    <mat-icon
+      *ngIf="noticeOpened; else elseTemplate">notifications_off
     </mat-icon>
+
+    <ng-template
+      #elseTemplate>
+
+      <mat-icon>notifications
+      </mat-icon>
+
+    </ng-template>
 
   </button>
 
@@ -155,16 +191,3 @@
   </mat-menu>
 
 </mat-toolbar>
-
-<!-- Notice List -->
-<mat-list
-  class="sider-notice-list">
-
-  <mat-list-item routerLink="/article/website" routerLinkActive="active">Express Web on Ubuntu
-  </mat-list-item>
-
-  <mat-list-item
-    *ngFor="let item of notice">{{ item.message }}
-  </mat-list-item>
-
-</mat-list>
