@@ -1,9 +1,7 @@
-
-
-<div
+<mat-list
   class="main-board">
 
-  <div
+  <mat-list-item
     class="number-card-board">
 
     <ngx-charts-number-card
@@ -13,9 +11,14 @@
       animations>
     </ngx-charts-number-card>
 
-  </div>
+  </mat-list-item>
 
-  <div
+  <mat-list-item>
+    width: {{ width }},
+    height: {{ height }}
+  </mat-list-item>
+
+  <!-- <mat-list-item
     class="graph-board">
 
     <ngx-graph
@@ -29,6 +32,6 @@
       [zoomToFit$]="zoomToFit$">
     </ngx-graph>
 
-  </div>
+  </mat-list-item> -->
 
-</div>
+</mat-list>

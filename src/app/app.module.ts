@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 // Module
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HomepageModule } from './homepage/homepage.module';
-import { SharedModule } from './shared/shared.module';
 
 // Routing
 import { SharedRoutingModule } from './shared/shared-routing.module';
@@ -24,7 +23,6 @@ import { AppRoutingModule } from './app-routing.module';
 
       DashboardModule,           // Module: Dashboard
       HomepageModule,            //       : Homepage
-      SharedModule,              //       : Shared
 
       SharedRoutingModule,       // Routing
       AppRoutingModule

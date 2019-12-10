@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PortalModule } from '@angular/cdk/portal';
 
 // Material Design: Layout
+import { MatCardModule } from'@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 //                : Navigation
@@ -126,7 +127,8 @@ export { SharedRoutingModule } from './shared-routing.module';
     FormsModule,               // Angular Form
     ReactiveFormsModule,
     PortalModule,              // Portal
-    MatExpansionModule,        // Material Design: Layout
+    MatCardModule,             // Material Design: Layout
+    MatExpansionModule,
     MatListModule,
     MatMenuModule,             //                : Navigation
     MatSidenavModule,

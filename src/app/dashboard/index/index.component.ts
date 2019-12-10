@@ -23,10 +23,14 @@ export class IndexComponent implements OnInit {
   graphClusters: Array<ClusterNode> = GRAPH_CLUSTERS
   scheme: string = 'picnic'
   taste: string = 'hotpink'
+  width: number = 412
+  height: number = 726
 
   constructor() { }
 
   ngOnInit() {
+    this.width = window.outerWidth
+    this.height =  window.outerHeight
   }
 
   fitGraph() {

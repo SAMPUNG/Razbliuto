@@ -6,6 +6,8 @@ import { NgxGraphModule } from '@swimlane/ngx-graph';
 
 import { IndexComponent } from './index/index.component';
 
+import { SharedModule } from '../shared/shared.module';
+
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
@@ -14,6 +16,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
   declarations: [IndexComponent],
   imports: [
     CommonModule,
+
+    SharedModule,
 
     NgxChartsModule,
     NgxGraphModule,
