@@ -1,37 +1,8 @@
-<mat-list
+<div
   class="main-board">
 
-  <mat-list-item
-    class="number-card-board">
+  <app-number-cards>
+  </app-number-cards>
 
-    <ngx-charts-number-card
-      [results]="numberCards"
-      [scheme]="scheme"
-      [bandColor]="taste"
-      animations>
-    </ngx-charts-number-card>
 
-  </mat-list-item>
-
-  <mat-list-item>
-    width: {{ width }},
-    height: {{ height }}
-  </mat-list-item>
-
-  <!-- <mat-list-item
-    class="graph-board">
-
-    <ngx-graph
-      layout="dagreCluster"
-      [draggingEnabled]="true"
-      [panningEnabled]="true"
-      [enableZoom]="true"
-      [links]="graphLinks"
-      [nodes]="graphNodes"
-      [clusters]="graphClusters"
-      [zoomToFit$]="zoomToFit$">
-    </ngx-graph>
-
-  </mat-list-item> -->
-
-</mat-list>
+</div>

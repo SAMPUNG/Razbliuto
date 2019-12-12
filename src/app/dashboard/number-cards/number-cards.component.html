@@ -1,0 +1,38 @@
+<div
+  class="container"
+  [ngStyle]="{ height: tableHeight }">
+
+  <div
+    *ngFor="let item of data"
+    [ngStyle]="{ width: columnWidth, height: rowHeight }"
+    class="number-card">
+
+    <div
+      class="card-label">{{ item.label }}
+    </div>
+
+    <div
+      class="card-value">
+
+      <span
+        *ngIf="item.prefix"
+        class="prefix">{{ item.prefix }}
+      </span>
+
+      <span
+        class="number">{{ item.value }}
+      </span>
+
+      <span
+        *ngIf="item.suffix"
+        class="suffix">{{ item.suffix }}
+      </span>
+
+    </div>
+
+    <div class="card-footer">
+    </div>
+
+  </div>
+
+</div>
