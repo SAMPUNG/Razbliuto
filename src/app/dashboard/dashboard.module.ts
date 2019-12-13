@@ -6,14 +6,14 @@ import { SharedModule } from '../shared/shared.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
 import { IndexComponent } from './index/index.component';
-import { NumberCardsComponent } from './number-cards/number-cards.component';
+import { PokerComponent } from './poker/poker.component';
 
 
 
 @NgModule({
   declarations: [
     IndexComponent,
-    NumberCardsComponent
+    PokerComponent
   ],
   imports: [
     CommonModule,

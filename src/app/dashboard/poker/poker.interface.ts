@@ -1,4 +1,4 @@
-interface NumberCard {
+interface Poker {
   label: string
   name?: string
   precision?: number
@@ -8,5 +8,5 @@ interface NumberCard {
 }
 
 export {
-  NumberCard
+  Poker
 }

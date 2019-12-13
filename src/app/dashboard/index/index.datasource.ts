@@ -1,6 +1,6 @@
-import { NumberCard } from './number-cards.interface';
+import { Poker } from '../poker/poker.interface';
 
-const CARDS: Array<NumberCard> = [
+const CARDS: Array<Poker> = [
   {
     label: 'RED',
     value: 24,
