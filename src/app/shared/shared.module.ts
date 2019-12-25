@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+
+// Common
 import { CommonModule } from '@angular/common';
 
 // HTTP
@@ -14,6 +16,8 @@ import { PortalModule } from '@angular/cdk/portal';
 import { MatCardModule } from'@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
+import { MatStepperModule } from '@angular/material/stepper';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 //                : Navigation
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -116,13 +120,20 @@ export { SharedRoutingModule } from './shared-routing.module';
         horizontalPosition: 'center',
         verticalPosition: 'top'
       }
+    },
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,         // Stepper Configure
+      useValue: {
+        displayDefaultIndicatorType: false,
+        showError: true
+      }
     }
   ],
   entryComponents: [
     MessageComponent
   ],
   exports: [
-    CommonModule,
+    CommonModule,              // Common
     HttpClientModule,          // HTTP
     FormsModule,               // Angular Form
     ReactiveFormsModule,
@@ -130,6 +141,7 @@ export { SharedRoutingModule } from './shared-routing.module';
     MatCardModule,             // Material Design: Layout
     MatExpansionModule,
     MatListModule,
+    MatStepperModule,
     MatMenuModule,             //                : Navigation
     MatSidenavModule,
     MatToolbarModule,

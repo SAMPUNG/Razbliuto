@@ -7,7 +7,7 @@ export { Poker } from './poker.interface';
 @Component({
   selector: 'app-poker',
   templateUrl: './poker.component.html',
-  styleUrls: ['./poker.component.styl']
+  styleUrls: ['./poker.component.scss']
 })
 export class PokerComponent implements OnChanges {
   @Input() color: string | Array<string>

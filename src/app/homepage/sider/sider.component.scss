@@ -1,0 +1,37 @@
+.sider-container {
+  height: calc(100% - 64px);
+  overflow-y: auto;
+  padding-bottom: 5px;
+
+  .mat-expansion-panel-header-title {
+    flex-basis: 0;
+  }
+
+  .mat-expansion-panel-header-description {
+    flex-basis: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-cotainer {
+    width: 300px;
+  }
+
+  .mat-list-item {
+    cursor: pointer;
+  }
+}
+
+.sider-tool-bar {
+  &.mobile {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.sider-notice {
+  &.mobile {
+    position: absolute;
+    bottom: 64px;
+  }
+}

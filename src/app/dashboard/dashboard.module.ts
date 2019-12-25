@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { HighchartsChartModule } from 'highcharts-angular';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -16,10 +17,8 @@ import { PokerComponent } from './poker/poker.component';
     PokerComponent
   ],
   imports: [
-    CommonModule,
-
+    HighchartsChartModule,
     SharedModule,
-
     DashboardRoutingModule
   ]
 })

@@ -11,7 +11,7 @@ import { Popup } from '../../shared/shared.interface';
 @Component({
   selector: 'app-sider',
   templateUrl: './sider.component.html',
-  styleUrls: ['./sider.component.styl']
+  styleUrls: ['./sider.component.scss']
 })
 export class SiderComponent implements OnInit {
   @Input() mobile: boolean

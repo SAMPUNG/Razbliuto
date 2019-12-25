@@ -5,7 +5,7 @@ import { MessageService } from '../../shared/message/message.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.styl']
+  styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
   @Input() mobile: boolean

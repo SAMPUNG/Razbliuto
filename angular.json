@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "styl"
+          "style": "scss"
         }
       },
       "root": "",
@@ -28,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/themes/an-app-theme.scss",
-              "src/styles.styl"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -128,5 +127,10 @@
       }
     }
   },
-  "defaultProject": "Razbliuto"
+  "defaultProject": "Razbliuto",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

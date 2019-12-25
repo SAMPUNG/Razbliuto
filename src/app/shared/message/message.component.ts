@@ -6,7 +6,7 @@ import { COLOR_NAME, COLOR_HEX } from '../shared.interface';
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
-  styleUrls: ['./message.component.styl']
+  styleUrls: ['./message.component.scss']
 })
 export class MessageComponent implements OnInit {
   color: COLOR_NAME;

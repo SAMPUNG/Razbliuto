@@ -12,7 +12,7 @@ import {
 @Component({
   selector: 'app-progress',
   templateUrl: './progress.component.html',
-  styleUrls: ['./progress.component.styl']
+  styleUrls: ['./progress.component.scss']
 })
 export class ProgressComponent implements OnInit {
   progress: Progress

@@ -6,7 +6,7 @@ import { COLOR_NAME, Popup } from '../shared/shared.interface';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.styl']
+  styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
   notice: Array<Popup>

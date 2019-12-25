@@ -22,3 +22,23 @@ $an-app-theme: mat-light-theme($an-app-primary, $an-app-accent, $an-app-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($an-app-theme);
+
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.mat-snack-bar-container {
+  background-color: #ffffff;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.loading {
+  position: fixed;
+  margin: 0 auto;
+  top: calc(50vh - 118px);
+}

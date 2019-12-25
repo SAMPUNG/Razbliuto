@@ -7,7 +7,7 @@ import { GridBodyDataSource, GridBodyItem } from './grid-body-datasource';
 @Component({
   selector: 'app-grid-body',
   templateUrl: './grid-body.component.html',
-  styleUrls: ['./grid-body.component.styl']
+  styleUrls: ['./grid-body.component.scss']
 })
 export class GridBodyComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
