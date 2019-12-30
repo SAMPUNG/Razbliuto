@@ -107,6 +107,8 @@ THE SOFTWARE.
 
 @angular/material/snack-bar
 
+@angular/material/stepper
+
 @angular/material/toolbar
 
 @angular/material/tooltip
@@ -750,6 +752,9 @@ Apache-2.0
  limitations under the License.
  
 
+
+ts-md5
+MIT
 
 tslib
 Apache-2.0
