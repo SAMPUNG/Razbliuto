@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Module
+import { AdminModule } from './admin/admin.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HomepageModule } from './homepage/homepage.module';
 
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
       BrowserModule,
       BrowserAnimationsModule,
 
-      DashboardModule,           // Module: Dashboard
+      AdminModule,               // Module: Admin
+      DashboardModule,           //       : Dashboard
       HomepageModule,            //       : Homepage
 
       SharedRoutingModule,       // Routing
