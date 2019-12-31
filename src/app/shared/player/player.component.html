@@ -1,0 +1,37 @@
+<div
+  class="container">
+
+  <div
+    role="starter"
+    #starter
+    *ngIf="single; else multipleDiv"
+    (click.once)="play(starter, player)">
+
+    <video
+      role="player"
+      #player
+      [src]="src"
+      [poster]="poster">
+    </video>
+
+  </div>
+
+  <template
+    #multipleDiv>
+
+    <div
+      role="starter"
+      *ngFor="let item of data; index as index"
+      (click.once)="playByIndex(index)">
+
+      <video
+        role="player"
+        [src]="item.url"
+        [poster]="item.poster">
+      </video>
+
+    </div>
+
+  </template>
+
+</div>
