@@ -27,7 +27,7 @@ export class PokerComponent implements OnChanges {
     // current browser: EDGE || FIREFOX || SAFARI
     // current platform: ANDROID || IOS
     // current rendering engine: BLINK || TRIDENT || WEBKIT
-    this.mobile = this.platform.ANDROID || this.platform.IOS
+    this.mobile = this.platform.ANDROID || this.platform.IOS || window.screen.width < 500
   }
 
   ngOnChanges(changes: SimpleChanges): void {console.log(changes)

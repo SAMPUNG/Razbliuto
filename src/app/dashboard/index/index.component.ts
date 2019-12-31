@@ -13,10 +13,22 @@ import { CARDS } from './index.datasource';
 export class IndexComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {
+    credits: {
+      enabled: false
+    },
+    legend: {
+      enabled: false
+    },
     series: [{
       data: [1, 2, 3],
       type: 'line'
-    }]
+    }],
+    title: {
+      text: null
+    },
+    yAxis: {
+      title: null
+    }
   };
   pokerData: Array<Poker> = CARDS
 

@@ -55,7 +55,7 @@ import { GridFormComponent } from './grid/grid-form/grid-form.component';
 import { GridNavComponent } from './grid/grid-nav/grid-nav.component';
 import { MessageComponent } from './message/message.component';
 import { ProgressComponent } from './progress/progress.component';
-import { VideosComponent } from './videos/videos.component';
+import { PlayerComponent } from './player/player.component';
 
 // DIY: Services
 export { MessageService } from './message/message.service';
@@ -73,7 +73,7 @@ export { SharedRoutingModule } from './shared-routing.module';
     GridNavComponent,
     MessageComponent,
     ProgressComponent,
-    VideosComponent
+    PlayerComponent
   ],
   imports: [
     CommonModule,
